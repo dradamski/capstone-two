@@ -163,9 +163,9 @@ for i, lat in enumerate(df['Lat']):
     except:
         lat_long = lat.split(',')
         if len(lat_long) == 2:
-            df.loc[:, 'Lat'][i] = lat_long[0]
+            df.at[i, 'Lat'] = lat_long[0]
             if len(lat_long[1]) > 1:
-                df.loc[:, 'Long'][i] = lat_long[1]
+                df.at[i, 'Long'] = lat_long[1]
 
 
 def col_strip(string):
@@ -188,8 +188,9 @@ for i, long in enumerate(df['Long']):
     if long > 0:
         lat = long
         long = df.iloc[i]['Lat']
-        df.iloc[i]['Lat'] = lat
-        df.iloc[i]['Long'] = long
+        df.at[i, 'Lat'] = lat
+        df.at[i, 'Long'] = long
+        print(df.iloc[i].loc[['Lat', 'Long']])
 
 
 # Save df to csv file

@@ -190,7 +190,6 @@ for i, long in enumerate(df['Long']):
         long = df.iloc[i]['Lat']
         df.at[i, 'Lat'] = lat
         df.at[i, 'Long'] = long
-        print(df.iloc[i].loc[['Lat', 'Long']])
 
 
 # Save df to csv file

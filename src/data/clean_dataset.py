@@ -191,6 +191,23 @@ for i, long in enumerate(df['Long']):
         df.at[i, 'Lat'] = lat
         df.at[i, 'Long'] = long
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 # Save df to csv file
 outpath = os.path.expanduser(

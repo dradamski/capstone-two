@@ -26,6 +26,7 @@ Project Organization
     │
     ├── reports             <- Generated analysis as HTML, PDF, LaTeX, etc.
     │   ├── figures         <- Generated graphics and figures to be used in reporting
+    │   ├── Final_Rep_NYC_WQ.pdf
     │   └── NYC_WQ_Pres.pptx 
     │                      
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.

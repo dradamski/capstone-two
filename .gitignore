@@ -72,6 +72,9 @@ target/
 # Spyder
 .spyproject/
 
+# Models
+models/
+
 # Jupyter NB Checkpoints
 .ipynb_checkpoints/
 

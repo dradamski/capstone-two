@@ -24,10 +24,10 @@ Project Organization
     ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │   ├── [1.0-dra-data-wrangling.ipynb](https://github.com/dradamski/capstone-two/blob/master/notebooks/1.0-dra-data-wrangling.ipynb)
-    │   ├── [2.0-dra-data-exploration.ipynb] (https://github.com/dradamski/capstone-two/blob/master/notebooks/2.0-dra-data-exploration.ipynb)
-    │   ├── [3.1-dra-indepth-analysis.ipynb] (https://github.com/dradamski/capstone-two/blob/master/notebooks/3.1-dra-indepth-analysis.ipynb)
-    │   └── [3.2-dra-indepth-analysis.ipynb] (https://github.com/dradamski/capstone-two/blob/master/notebooks/3.2-dra-indepth-analysis.ipynb)
+    │   ├── [1.0-dra-data-wrangling.ipynb](notebooks/1.0-dra-data-wrangling.ipynb)
+    │   ├── [2.0-dra-data-exploration.ipynb] (https://github.com/dradamski/capstone-two/master/notebooks/2.0-dra-data-exploration.ipynb)
+    │   ├── [3.1-dra-indepth-analysis.ipynb] (https://github.com/dradamski/capstone-two/master/notebooks/3.1-dra-indepth-analysis.ipynb)
+    │   └── [3.2-dra-indepth-analysis.ipynb] (https://github.com/dradamski/capstone-two/master/notebooks/3.2-dra-indepth-analysis.ipynb)
     │
     ├── references          <- Data dictionaries, manuals, and all other explanatory materials.
     │

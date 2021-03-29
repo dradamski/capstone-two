@@ -7,4 +7,7 @@ Sphinx
 coverage
 awscli
 flake8
+numpy
+pandas
 python-dotenv>=0.5.1
+requests

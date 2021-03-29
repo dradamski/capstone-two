@@ -11,15 +11,15 @@ CLIENT = Socrata("data.cityofnewyork.us", APP_TOKEN, timeout=30)
 def pull_new_data(
     client,
     dataset_id,
-    output="../../data/raw/raw_data",
+    output=" ../data/raw/raw_data",
     query="sample_date > '1979-12-31T00:00:00.000'",
 ):
 
-    date = datetime.now().strftime("_%Y_%m_%d.csv")
+    date = datetime.now().strftime("_%Y_%m.csv")
     output = output + date
 
     if path.exists(output):
-        return "Data has alread been pulled today. Try again tomorrow."
+        return "Data has alread been pulled this month. Try again later."
 
     with open(output, "w", newline="") as f:
         for page in client.get_all(

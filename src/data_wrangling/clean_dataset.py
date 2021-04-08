@@ -11,7 +11,7 @@ import numpy as np
 import os
 import pandas as pd
 
-path = os.path.expanduser('~/Projects/capstone-two/data/raw/Harbor_Water_Quality.csv')
+path = os.path.expanduser('../../data/raw/Harbor_Water_Quality.csv')
 df = pd.read_csv(path, parse_dates=['Sample Date', 'Sample Time'])
 
 
@@ -20,12 +20,12 @@ df = pd.read_csv(path, parse_dates=['Sample Date', 'Sample Time'])
 survey_stations = ['K1', 'K2', 'K3', 'K4', 'K5', 'K5A', 'K6',
                   'N1', 'N3B', 'N4', 'N5', 'N6', 'G2', 'N7', 'N8',
                   'N9', 'N16', 'NR1', 'E2', 'E4', 'E6', 'E7', 'E8',
-                  'E10', 'E11', 'E12', 'E13', 'E14', 'E15', 'J1', 
+                  'E10', 'E11', 'E12', 'E13', 'E14', 'E15', 'J1',
                   'J2', 'J3', 'J5', 'J7', 'J8', 'J9A', 'J10', 'J11',
                   'J12', 'JA1', 'N9A', 'H3', 'J14', 'J16', 'AC1',
                   'AC1', 'AC2', 'BB2', 'BB4', 'BR1', 'BR3', 'BR5',
                   'CIC2', 'CIC3', 'F1', 'F5', 'FB1', 'FLC1', 'FLC2',
-                  'GB1', 'GC3', 'GC4', 'GC5', 'GC6', 'HC1', 'HC2', 
+                  'GB1', 'GC3', 'GC4', 'GC5', 'GC6', 'HC1', 'HC2',
                   'HC3', 'HR1', 'HR2', 'HR03', 'LN1', 'NC0', 'NC1',
                   'NC2', 'NC3', 'PB2', 'PB3', 'SP1', 'SP2', 'WC1',
                   'WC2', 'WC3'
@@ -46,13 +46,13 @@ for col in df.columns:
         df = df.drop(columns=col)
     elif len(df[df[col].notnull()]) < 10000:
         df = df.drop(columns=col)
-        
-df = df.drop(['Current Direction (Current Direction)', 
+
+df = df.drop(['Current Direction (Current Direction)',
               'Wind Direction (Wind Direction)',
-              'Current Speed (knot)', 'Wind Speed (mph)', 
+              'Current Speed (knot)', 'Wind Speed (mph)',
               'Sea State ', 'Type',
               'Enterococcus Top Sample Less Than or Greater Than Result'
-              ], 
+              ],
               axis=1
             )
 
@@ -66,10 +66,10 @@ df = df.replace(['Dry', 'Wet'], ['D', 'W'])
 
 # Check which columns are numeric and create a list of object columns
 obj_cols = []
-ok_obj_cols = ['Sampling Location', 'Sample Date', 'Sample Time', 
+ok_obj_cols = ['Sampling Location', 'Sample Date', 'Sample Time',
                'Weather Condition (Dry or Wet)'
                ]
-               
+
 for col in df:
     if col not in ok_obj_cols:
         try:
@@ -83,7 +83,7 @@ df['Bottom Total Suspended Solid (mg/L)'] \
 
 # Fix Secchi Disk
 df['Secchi Depth (ft)'] = df['Secchi Depth (ft)'].replace('3..5', '3.5')
-      
+
 # Fix Bottom PH
 df['Bottom PH'] = df['Bottom PH'].replace('N', np.nan)
 
@@ -138,7 +138,7 @@ def drop_less(string):
 
 less_than_cols = ['Top Nitrate/Nitrite (mg/L)', 'Top Ammonium (mg/L)',
                  'Top Ortho-Phosphorus (mg/L)', 'Top Silica (mg/L)',
-                  'Total Phosphorus(mg/L)' 
+                  'Total Phosphorus(mg/L)'
                  ]
 
 for col in less_than_cols:
@@ -155,7 +155,7 @@ for i in df['Long']:
         pd.to_numeric(i)
     except:
         df['Long'] = df['Long'].replace(i, np.nan)
-        
+
 # Fix Latitude and Longitude mistakes
 for i, lat in enumerate(df['Lat']):
     try:
@@ -191,23 +191,23 @@ for i, long in enumerate(df['Long']):
         df.at[i, 'Lat'] = lat
         df.at[i, 'Long'] = long
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Save df to csv file
 outpath = os.path.expanduser(
